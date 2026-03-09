@@ -76,6 +76,21 @@ app.post('/books/:id/details', (req, res) => {
     res.status(201).json(book);
 });
 
+app.delete('/books/:id/details/:detailId', (req, res) => {
+    const book = books.find(b => b.id === req.params.id);
+    if (!book) {
+        return res.status(404).json({ error: "Book or detail not found" });
+    }
+
+    const detailIndex = book.details.findIndex(d => d.id === req.params.detailId);
+    if (detailIndex === -1) {
+        return res.status(404).json({ error: "Book or detail not found" });
+    }
+
+    book.details.splice(detailIndex, 1);
+    res.status(200).json({ message: "Detail deleted successfully" });
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
