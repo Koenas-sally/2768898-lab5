@@ -8,8 +8,12 @@ let books = [];
 
 app.get('/whoami', (req, res) =>{
     res.status(200).json({
-        studentNumber: "student-id"
+        studentNumber: "2768898"
     });
+});
+
+app.get('/books', (req, res) =>{
+    res.status(200).json(books)
 });
 
 app.listen(PORT, () => {
