@@ -24,6 +24,25 @@ app.get('/books/:id', (req, res) =>{
     res.status(200).json(book);
 });
 
+app.post('/books', (req, res) => {
+    const { id, title, details } = req.body;
+
+    if (!id || !title) {
+        return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const newBook = {
+        id: String(id),
+        title,
+        details: details || []
+    };
+
+    books.push(newBook);
+    res.status(201).json(newBook);
+});
+
+
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
