@@ -1,0 +1,23 @@
+{
+  "name": "2768898-lab5",
+  "version": "1.0.0",
+  "main": "2768898-lab5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koenas-sally/2768898-lab5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koenas-sally/2768898-lab5/issues"
+  },
+  "homepage": "https://github.com/Koenas-sally/2768898-lab5#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
