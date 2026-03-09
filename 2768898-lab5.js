@@ -16,6 +16,14 @@ app.get('/books', (req, res) =>{
     res.status(200).json(books)
 });
 
+app.get('/books/:id', (req, res) =>{
+    const book = books.find(b => b.id === req.params.id);
+    if (!book) {
+        return res.status(404).json({ error: "Book not found" });
+    }
+    res.status(200).json(book);
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
