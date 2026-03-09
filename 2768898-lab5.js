@@ -4,6 +4,14 @@ const PORT = 3000;
 
 app.use(express.json());
 
+let books = [];
+
+app.get('/whoami', (req, res) =>{
+    res.status(200).json({
+        studentNumber: "student-id"
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
